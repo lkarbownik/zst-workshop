@@ -122,12 +122,102 @@ titleElement.textContent = 'tekst dodany do paragrafu';
 container.appendChild(titleElement);
 ```
 
-### Iterowanie po tablicy
+### Tablice
 
 ```javascript
-var fruits = ['apple', 'orange', 'strawberry'];
+var fruits = [];
+
+fruits[1] = 'apple'; // przypisuje lub zastępuje element pod indexem 1
+
+fruits.push('apple'); // dodaje element 'apple' do tablicy
+
+fruits.slice(); // zwraca kopię tablicy
+fruits.slice(1); // zwraca kopię tablicy zaczynając od 2 elementu
+fruits.slice(1, 3); // zwraca elementy od 2 do 4
+fruits.slice(-1); // zwraca ostatni element
+
+fruits.splice(2, 1); // Usuwa jeden element rozpoczynając od indexu 2
+
+fruits.indexOf('apple'); // Zwraca index elementu w tablicy lub -1, gdy element nie występuje w tablicy
+
+var movie = 'Avengers: Infinity War';
+movie.indexOf('War'); // 19
+
 fruits.forEach(function(fruit) {
   // funkcja zostanie wywołana 1 raz dla każdego elementu listy
   console.log(fruit);
 });
+
+var a = [1, 2, 3];
+a.length; // 3
+
+var b = 'apple';
+b.length; // 4
+```
+
+### Pola input
+
+```javascript
+var movieNameInput = document.querySelector('.name-input');
+movieNameInput.value; // zwraca aktualną wartość pola movieNameInput
+movieNameInput.value = ''; // zmienia wartość pola movieNameInput na pusty string
+```
+
+### Instrukcje warunkowe
+
+```javascript
+var value = true;
+
+if (value) {
+  console.log('test');
+}
+
+if (false) {
+  console.log('test');
+}
+
+var a = 'abc';
+if (a.length === 3) {
+  console.log('string a is 3 characters long');
+}
+```
+
+### Typy danych
+
+```javascript
+typeof 'abc'; // "string"
+typeof 3; // "number"
+typeof true; // "boolean"
+typeof {}; // object
+typeof []; // object
+
+Number('1'); // 1
+String(1); // "1"
+```
+
+### localStorage
+
+```javascript
+localStorage.setItem('klucz', 'wartosc'); // zapisuje wartość pod kluczem 'klucz'
+localStorage.getItem('klucz', 'wartosc'); // zwraca wartość zapisaną pod kluczem 'klucz'
+localStorage.removeItem('klucz'); // usuwa wartość zapisaną pod kluczem 'klucz'
+```
+
+### JSON
+
+```javascript
+JSON.stringify([1, 2, 3]); // "[1,2,3]"
+JSON.parse('[1,2,3]'); // [1,2,3]
+```
+
+### Usuwanie elementów z drzewa DOM
+
+```javascript
+var movieListElement = document.querySelector('.movie-list');
+movieListElement.removeChild(movieListElement.firstChild); // usuwa pierwszy element z elementu movieListElement
+
+// Usunięcie wszystkich elementów
+while (movieListElement.firstChild) {
+  movieListElement.removeChild(movieListElement.firstChild);
+}
 ```
